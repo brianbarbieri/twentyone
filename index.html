@@ -5,9 +5,10 @@
   <meta charset="utf-8">
 
   <title>Twenty one</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <meta name="description" content="Score board for the Twenty one game.">
+  <meta name="author" content="Brian Barbieri">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -15,6 +16,7 @@
 <body>
   <div class="line">
     <div class="dice">
+      <div class="text">6</div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
       <div class="dot middleright"></div>
@@ -24,6 +26,7 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">5</div>
       <div class="dot middle"></div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
@@ -32,6 +35,7 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">4</div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
       <div class="dot bottomleft"></div>
@@ -39,25 +43,29 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">3</div>
       <div class="dot topright"></div>
       <div class="dot middle"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">2</div>
       <div class="dot topright"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">1</div>
       <div class="dot middle"></div>
       <div class="box"></div>
     </div>
-    <div class="scorebox">0</div>
+    <div class="scorebox" id=0>0</div>
   </div>
 
   <div class="line">
     <div class="dice">
+      <div class="text">5</div>
       <div class="dot middle"></div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
@@ -66,6 +74,7 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">4</div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
       <div class="dot bottomleft"></div>
@@ -73,6 +82,7 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">4</div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
       <div class="dot bottomleft"></div>
@@ -80,26 +90,30 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">3</div>
       <div class="dot topright"></div>
       <div class="dot middle"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">3</div>
       <div class="dot topright"></div>
       <div class="dot middle"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">1</div>
       <div class="dot middle"></div>
       <div class="box"></div>
     </div>
-    <div class="scorebox">0</div>
+    <div class="scorebox" id=1>0</div>
   </div>
 
   <div class="line">
     <div class="dice">
+      <div class="text">6</div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
       <div class="dot middleright"></div>
@@ -109,6 +123,7 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">5</div>
       <div class="dot middle"></div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
@@ -117,30 +132,35 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">3</div>
       <div class="dot topright"></div>
       <div class="dot middle"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">2</div>
       <div class="dot topright"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">2</div>
       <div class="dot topright"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">1</div>
       <div class="dot middle"></div>
       <div class="box"></div>
     </div>
-    <div class="scorebox">0</div>
+    <div class="scorebox" id=2>0</div>
   </div>
 
   <div class="line">
     <div class="dice">
+      <div class="text">5</div>
       <div class="dot middle"></div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
@@ -149,6 +169,7 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">4</div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
       <div class="dot bottomleft"></div>
@@ -156,6 +177,7 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">4</div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
       <div class="dot bottomleft"></div>
@@ -163,24 +185,28 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">2</div>
       <div class="dot topright"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">2</div>
       <div class="dot topright"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">1</div>
       <div class="dot middle"></div>
       <div class="box"></div>
     </div>
-    <div class="scorebox">0</div>
+    <div class="scorebox" id=3>0</div>
   </div>
 
   <div class="line">
     <div class="dice">
+      <div class="text">4</div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
       <div class="dot bottomleft"></div>
@@ -188,6 +214,7 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">4</div>
       <div class="dot topright"></div>
       <div class="dot topleft"></div>
       <div class="dot bottomleft"></div>
@@ -195,31 +222,35 @@
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">3</div>
       <div class="dot topright"></div>
       <div class="dot middle"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">3</div>
       <div class="dot topright"></div>
       <div class="dot middle"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">2</div>
       <div class="dot topright"></div>
       <div class="dot bottomleft"></div>
       <div class="box"></div>
     </div>
     <div class="dice">
+      <div class="text">1</div>
       <div class="dot middle"></div>
       <div class="box"></div>
     </div>
-    <div class="scorebox">0</div>
+    <div class="scorebox" id=4>0</div>
   </div>
 
   <div class="line">
-    <div class="tooltip">Bonus: 1x/1  2x/3  3x/6  4x/10  4x/15  6x/21</div>
+    <div class="tooltip">Bonus: 1x/1  2x/3  3x/6  4x/10  5x/15  6x/21</div>
     <div class="scorebox totalscorebox" style="left:480px">0</div>
   </div>
   <script src="scripts.js"></script>

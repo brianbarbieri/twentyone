@@ -1,8 +1,13 @@
 .line{
-    background-color: bisque;
-    width: 100%;
+    background-color: rgb(243, 239, 234);
+    width: 90%;
     height: 20%;
     border-bottom: 2px solid gray;
+}
+
+.text{
+    color:rgba(0, 0, 0, 0);
+    position: absolute;
 }
 
 .scorebox{
@@ -24,10 +29,38 @@
 }
 
 .tooltip{
-
     -ms-transform: translateY(50%);
     transform: translateY(50%);
 }
+
+.cross { 
+    font-size: 100px;
+    color: black;
+    -webkit-text-fill-color: red; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-weight: bold;
+    font-family: helvetica,arial;
+    line-height: 1;
+    position: absolute;
+    -ms-transform: translate(-6%,-25%);
+    transform: translate(-6%, -25%);
+} 
+
+.minicross {
+    font-size: 25px;
+    color: black;
+    -webkit-text-fill-color: red; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-weight: bold;
+    font-family: helvetica,arial;
+    line-height: 1;
+    position: absolute;
+    -ms-transform: translate(-6%,-25%);
+    transform: translate(-6%, -25%);
+}
+
 .dice{
     border: 3px solid black;
     border-radius: 5px;
@@ -36,6 +69,7 @@
     display:inline-block;
     position: relative;
     margin: 10px;   
+    z-index: 0;
 }
 
 .dot{
@@ -95,4 +129,5 @@
     width: 10px;
     border: 2px solid black;
     border-radius: 3px;
+    z-index: 1;
 }
