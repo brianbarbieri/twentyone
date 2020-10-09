@@ -8,14 +8,26 @@
 .scorebox{
     border: 4px solid black;
     border-radius: 5px;
-    width: 50px;
-    height: 30px;
+    width: 40px;
+    height: 20px;
     display:inline-block;
     position: relative;
     margin: 10px;   
-    left: 80%;
+    text-align: center;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
+.totalbox{
+    border: 6px solid black;
+}
+
+.tooltip{
+
+    -ms-transform: translateY(50%);
+    transform: translateY(50%);
+}
 .dice{
     border: 3px solid black;
     border-radius: 5px;
