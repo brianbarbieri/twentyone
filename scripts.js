@@ -29,8 +29,16 @@ function calculateScore(){
         $("#" + i + ".scorebox")[0].innerHTML = score;
         $(".totalscorebox")[0].innerHTML = totalscore;
     }) 
-    
+}
 
+function createDropdown(num){
+    console.log(num);
+    text = '<select name="choices" class="choices">\n'
+    for (var i = 0; i < num+1; i++) {
+        text += '   <option value="' + i + '"  selected="'+ i + '">' + i + '</option>\n';
+    }
+    text += "</select>"
+    return text
 }
 
 $( ".line" ).each(function(i, obj) {
@@ -48,14 +56,23 @@ $(".dice").each(function(i, ik){ik.value = 0});
 $(".box").each(function(i, ik){ik.value = 0});
 
 $('.dice').click(function(){
-    if (this.value != 0){
-        this.value = 0;
-        this.querySelectorAll('.cross').forEach(n => n.remove());
+    if (this.value == 2){
+        this.value = 3;
+        val = this.querySelectorAll('.choices')[0].value
+
+        this.querySelectorAll('.choices, .cross, .minicross').forEach(n => n.remove());
+
+        $('<div class="cross">' + val + '</div>').appendTo(this);
+    }else if (this.value == 1){
+        this.value = 2;
+    }else if (this.value == 3){
+            this.value = 0;
     }else{
         this.value = 1;
-        $('<div class="cross">&times;</div>').appendTo(this);
+        txt = createDropdown(parseInt(this.querySelectorAll('.text')[0].innerHTML))
+        $(txt).appendTo(this);
     }
-    calculateScore();
+    // calculateScore();
  });
 
 $('.box').click(function(){
@@ -66,6 +83,6 @@ $('.box').click(function(){
         this.value = 1;
         $('<div class="minicross">&times;</div>').appendTo(this);
     }
-    calculateScore();
+    // calculateScore();
  });
 
