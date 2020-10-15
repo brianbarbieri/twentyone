@@ -8,7 +8,7 @@ function calculateScore(){
     multipliers={ 
         "0":0, 
         "1":1, 
-        "2":2,
+        "2":3,
         "3":6, 
         "4":10, 
         "5":15, 
@@ -18,21 +18,24 @@ function calculateScore(){
    totalscore = 0;
    
    $( ".line" ).each(function(i, obj) {
+        if (i == 5){ return false; } // last line does not have any dices but is just for showing info so break out of loop
         score = 0;
+
         crosses = $(this).find($( ".cross" ))
         crosses.each((i, elem) => {
-            score += parseInt($(elem.parentElement).find($( ".text" ))[0].innerHTML)
+            score += parseInt($(elem.parentElement).find($( ".cross" ))[0].innerHTML)
         })
+
         count_mini_crosses = $(this).find($( ".minicross" )).length;
         score += multipliers[count_mini_crosses.toString()];
         totalscore += score;
+
         $("#" + i + ".scorebox")[0].innerHTML = score;
         $(".totalscorebox")[0].innerHTML = totalscore;
     }) 
 }
 
 function createDropdown(num){
-    console.log(num);
     text = '<select name="choices" class="choices">\n'
     for (var i = 0; i < num+1; i++) {
         text += '   <option value="' + i + '"  selected="'+ i + '">' + i + '</option>\n';
@@ -63,26 +66,24 @@ $('.dice').click(function(){
         this.querySelectorAll('.choices, .cross, .minicross').forEach(n => n.remove());
 
         $('<div class="cross">' + val + '</div>').appendTo(this);
+
+        if (val == parseInt(this.querySelectorAll('.text')[0].innerHTML)){
+            cross_box = Array.from(this.children).filter(label => label.className == "box")[0]
+            $('<div class="minicross">&times;</div>').appendTo(cross_box);
+        }
+     
     }else if (this.value == 1){
         this.value = 2;
     }else if (this.value == 3){
             this.value = 0;
+
+
     }else{
         this.value = 1;
         txt = createDropdown(parseInt(this.querySelectorAll('.text')[0].innerHTML))
         $(txt).appendTo(this);
     }
-    // calculateScore();
+    calculateScore();
  });
 
-$('.box').click(function(){
-    if (this.value != 0){
-        this.value = 0;
-        this.querySelectorAll('.minicross').forEach(n => n.remove());
-    }else{
-        this.value = 1;
-        $('<div class="minicross">&times;</div>').appendTo(this);
-    }
-    // calculateScore();
- });
 
