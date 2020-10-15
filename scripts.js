@@ -1,11 +1,18 @@
 var colours = ["#12e049", "#d9230f", "#1a25f0", "#f5ff36", "#f2f0f0", "#3d3c3c"];
 
 function shuffle(array) {
+    /*
+    Shuffles the colour array so every row is different.
+    */
     return array.sort(() => Math.random() - 0.5);
 }
 
 function calculateScore(){
-    multipliers={ 
+    /*
+    Function to calcualte game score. Is called with every new number added to the board.
+    First calculates the normal score and afterwards bonus score.
+    */
+    multipliers={ // required to calculate bonus score
         "0":0, 
         "1":1, 
         "2":3,
@@ -16,16 +23,15 @@ function calculateScore(){
    };
 
    totalscore = 0;
-   
    $( ".line" ).each(function(i, obj) {
         if (i == 5){ return false; } // last line does not have any dices but is just for showing info so break out of loop
         score = 0;
-
+        // normal score
         crosses = $(this).find($( ".cross" ))
         crosses.each((i, elem) => {
             score += parseInt($(elem.parentElement).find($( ".cross" ))[0].innerHTML)
         })
-
+        // bonus score
         count_mini_crosses = $(this).find($( ".minicross" )).length;
         score += multipliers[count_mini_crosses.toString()];
         totalscore += score;
@@ -36,6 +42,9 @@ function calculateScore(){
 }
 
 function createDropdown(num){
+    /*
+    Creates the dropdown menu that is used to select a number when a dice is touched
+    */
     text = '<select name="choices" class="choices">\n'
     for (var i = 0; i < num+1; i++) {
         text += '   <option value="' + i + '"  selected="'+ i + '">' + i + '</option>\n';
